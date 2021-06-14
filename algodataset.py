@@ -70,8 +70,8 @@ class ToTensor(object):
 
 
 # How to call the dataset
-train_dataset = UCFDataset(root_dir=root_path, phase='train', transform=transforms.Compose([ToTensor()]))
-valid_dataset = UCFDataset(root_dir=root_path, phase='valid', transform=transforms.Compose([ToTensor()]))
+train_dataset = AlgoDataset(root_dir=root_path, phase='train', transform=transforms.Compose([ToTensor()]))
+valid_dataset = AlgoDataset(root_dir=root_path, phase='valid', transform=transforms.Compose([ToTensor()]))
  
 train_loader =  torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
 val_loader =  torch.utils.data.DataLoader(valid_dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
